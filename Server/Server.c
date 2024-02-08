@@ -51,7 +51,7 @@ int main()
         perror("Accept Peer Failure");
         return -1;
     }
-    char* greeting = "Hello.\nWelcome, friend.\nMessage limit = 99 chars.\n>";
+    char* greeting = "Hello &Welcome.\nMessage limit = 99 chars.\n>";
     size_t greeting_length = strlen(greeting);
     if(write(peer_sockfd, greeting, greeting_length) < 0)
     {
@@ -64,7 +64,7 @@ int main()
     greeting_length = strlen(greeting);
     write(peer_sockfd, greeting, greeting_length);
     write(peer_sockfd, &msg[0], sizeof(msg));
-    greeting = "\nMessage received. Nine Tailed Fox thanks you for your cooperation.\nWe'll be in contact sometime soon.\n";
+    greeting = "\nMessage received.\n";
     greeting_length = strlen(greeting);
     write(peer_sockfd, greeting, greeting_length);
 }
